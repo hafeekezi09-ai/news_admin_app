@@ -5,7 +5,7 @@ class Category {
   final String? content;
   final String? coverUrl;
 
-  // 👇 optional feature fields
+  //  optional feature fields
   final String? featureTitle;
   final String? featureContent;
   final String? featureImageUrl;
@@ -26,7 +26,7 @@ class Category {
       id: id,
       name: m['name'] as String? ?? '',
       type: m['type'] as String? ?? '',
-      content: m['content'] as String?,          // keep null if missing
+      content: m['content'] as String?,          
       coverUrl: m['coverUrl'] as String?,
       featureTitle: m['featureTitle'] as String?,
       featureContent: m['featureContent'] as String?,

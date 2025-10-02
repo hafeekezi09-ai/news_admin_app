@@ -1,4 +1,4 @@
-// lib/widgets/category_dropdown.dart
+
 import 'package:flutter/material.dart';
 import '../models/category.dart';
 import '../services/category_service.dart';
@@ -6,7 +6,7 @@ import '../services/category_service.dart';
 class CategoryDropdown extends StatelessWidget {
   final String? value;
   final void Function(String id, String name) onChanged;
-  final String? typeFilter; // pass 'magazine' to restrict to magazines
+  final String? typeFilter; 
 
   const CategoryDropdown({
     super.key,

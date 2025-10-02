@@ -11,7 +11,7 @@ class News {
   final String categoryName;
   final DateTime? publishedAt;
 
-  // 🔹 New fields
+  
   final bool isTrending;
   final int views;
 
@@ -25,8 +25,8 @@ class News {
     required this.categoryId,
     required this.categoryName,
     this.publishedAt,
-    this.isTrending = false, // default
-    this.views = 0,          // default
+    this.isTrending = false, 
+    this.views = 0,          
   });
 
   factory News.fromMap(String id, Map<String, dynamic> m) => News(

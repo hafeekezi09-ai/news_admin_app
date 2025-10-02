@@ -5,25 +5,25 @@ class AuthService {
   final FirebaseAuth _auth = FirebaseAuth.instance;
   final FirebaseFirestore _db = FirebaseFirestore.instance;
 
-  /// Sign in with email & password
+
   Future<User?> signIn(String email, String password) async {
     try {
       final cred = await _auth.signInWithEmailAndPassword(
-        email: email.trim(), // ✅ avoid spaces
+        email: email.trim(), 
         password: password.trim(),
       );
       return cred.user;
     } on FirebaseAuthException catch (e) {
-      // Print detailed error
-      print("🔥 Login failed [${e.code}] - ${e.message}");
+      
+      print("Login failed [${e.code}] - ${e.message}");
       return null;
     } catch (e) {
-      print("🔥 Unexpected login error: $e");
+      print(" Unexpected login error: $e");
       return null;
     }
   }
 
-  /// Fetch user role from Firestore
+  
   Future<String?> getUserRole(String uid) async {
     try {
       final snap = await _db.collection('admins').doc(uid).get();
@@ -33,14 +33,14 @@ class AuthService {
           return data['role'] as String?;
         }
       }
-      return null; // no role found
+      return null; 
     } catch (e) {
-      print("🔥 Role fetch failed: $e");
+      print(" Role fetch failed: $e");
       return null;
     }
   }
 
-  /// Sign out
+  
   Future<void> signOut() async {
     await _auth.signOut();
   }
